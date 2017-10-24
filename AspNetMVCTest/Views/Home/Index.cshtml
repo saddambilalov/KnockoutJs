@@ -6,23 +6,7 @@
     <script src="~/Knockout/IndexViewModel.js"></script>
 }
 
-<form role="form">
-
-    <table>
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-            </tr>
-        </thead>
-        <tbody data-bind="foreach: students">
-            <tr>
-                <td data-bind="text: firstName"></td>
-                <td data-bind="text: lastName"></td>
-            </tr>
-        </tbody>
-    </table>
-
+<div style="margin-top: 30px">
     <div class="form-group">
         <label for="inpFirstName">First Name</label>
         <input id="inpFirstName" type="text" class="form-control" data-bind="value: firstName" />
@@ -32,6 +16,28 @@
         <label for="inpLastName">Last Name</label>
         <input id="inpLastName" type="text" class="form-control" data-bind="value: lastName" />
     </div>
-</form>
 
-<input type="button" id="btnAddStudent" class="btn btn-primary" value="Add Student" data-bind="click: addStudent" /> 
+    <input type="button" class="btn btn-primary" value="Add Student" data-bind="visible: isAdd(), click: addStudent" />
+    <input type="button" class="btn btn-primary" value="Save" data-bind="visible: !isAdd(), click: saveStudent" />
+    
+</div>
+
+<table class="table" style="margin-top: 50px">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: students">
+        <tr>
+            <td data-bind="text: firstName"></td>
+            <td data-bind="text: lastName"></td>
+            <td>
+                <input data-bind="click: $parent.removeStudent" type="button" class="btn btn-danger" value="Remove" />
+                <input data-bind="click: $parent.editStudent" type="button" class="btn btn-info" value="Edit" />
+            </td>
+        </tr>
+    </tbody>
+</table>
