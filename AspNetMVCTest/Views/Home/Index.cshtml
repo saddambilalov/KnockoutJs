@@ -6,6 +6,8 @@
     <script src="~/Knockout/IndexViewModel.js"></script>
 }
 
+<label style="margin-top: 30px; font-weight: bold;">@ViewBag.Count is at @DateTime.Now.ToLongTimeString()</label>
+
 <div style="margin-top: 30px">
     <div class="form-group">
         <label for="inpFirstName">First Name</label>
@@ -19,7 +21,7 @@
 
     <input type="button" class="btn btn-primary" value="Add Student" data-bind="visible: isAdd(), click: addStudent" />
     <input type="button" class="btn btn-primary" value="Save" data-bind="visible: !isAdd(), click: saveStudent" />
-    
+
 </div>
 
 <table class="table" style="margin-top: 50px">
