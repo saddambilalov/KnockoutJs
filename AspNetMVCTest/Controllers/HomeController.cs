@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using System.Web.UI;
+using AspNetMVCTest.Filters;
 
 namespace AspNetMVCTest.Controllers
 {
     public class HomeController : Controller
     {
         //[OutputCache(Duration = 30, VaryByParam = "none", Location = OutputCacheLocation.Server)]
+        [CustomActionFilter]
+        [CustomExceptionFilter]
         public ActionResult Index()
         {
+            //throw new Exception("Test");
+
             if (System.Web.HttpContext.Current.Cache["count"] == null)
             {
                 var list = new List<string>();

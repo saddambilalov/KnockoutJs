@@ -7,8 +7,9 @@ namespace AspNetMVCTest
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
-            filters.Add(new CustomFilterAttribute());
+            //filters.Add(new HandleErrorAttribute());
+            //filters.Add(new CustomActionFilter());
+            //filters.Add(new CustomExceptionFilter());
         }
     }
 }

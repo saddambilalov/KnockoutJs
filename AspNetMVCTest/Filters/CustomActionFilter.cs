@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 namespace AspNetMVCTest.Filters
 {
-    public class CustomFilterAttribute : ActionFilterAttribute
+    public class CustomActionFilter : ActionFilterAttribute
     {
         public override void OnResultExecuting(ResultExecutingContext filterContext)
         {

@@ -15,13 +15,13 @@ namespace AspNetMVCTest
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
-       protected void Application_Error(object sender, EventArgs e)
-        {
-            // Code that runs when an unhandled error occurs
-            Exception objErr = Server.GetLastError().GetBaseException();
-            string err = "Error in: " + Request.Url.ToString() +
-                         ". Error Message:" + objErr.Message.ToString();
+       //protected void Application_Error(object sender, EventArgs e)
+       // {
+       //     // Code that runs when an unhandled error occurs
+       //     Exception objErr = Server.GetLastError().GetBaseException();
+       //     string err = "Error in: " + Request.Url.ToString() +
+       //                  ". Error Message:" + objErr.Message.ToString();
 
-        }
+       // }
     }
 }
